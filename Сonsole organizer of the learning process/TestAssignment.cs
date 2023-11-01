@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Сonsole_organizer_of_the_learning_process
 {
-    public class TestAssignment:ALessons
+    public class TestAssignment:ATasks
     {
         public string TestLink { get; set; }
     }

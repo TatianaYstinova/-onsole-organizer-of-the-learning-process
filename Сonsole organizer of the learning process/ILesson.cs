@@ -7,9 +7,18 @@ using System.Threading.Tasks;
 namespace Сonsole_organizer_of_the_learning_process
 {
     public interface ILesson
-    {// задание
-        public string Name { get; set; }
-        public string DeliveryDates { get; set; }
-        public string Formulation { get; set; }
+    {// занятия
+
+        public string Date { get; set; }
+        public List<string> topics { get; set; }
+        public string Comment { get; set; }
+        public enum LessonType //перечисление типов занятий
+        {
+            Lecture,
+            Consultation,
+            Other
+        }
+
+
     }
 }

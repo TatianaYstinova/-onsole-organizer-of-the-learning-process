@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace Сonsole_organizer_of_the_learning_process
 {
-    public abstract class ATasks
-    {
-        public string Date { get; set; }
-        public List<string> topics { get; set; }
-        public string Comment { get; set; }
-        public Type type { get; set; }
-        public enum Type //перечисление типов занятий
+    public abstract class ATasks : ITask
+    {//занятие
+        public string Name { get; set; }
+        public string DeliveryDates { get; set; }
+        public string Formulation { get; set; }
+        public abstract string TestLink { get; set; }
+        public abstract string ShortDescription { get; set; }
+        public abstract List<string> Subtasks { get; set; }
+
+        public  ATasks (string name, string deliveryDates, string formulation)
         {
-            Lecture,
-            Consultation,
-            Other
+             Name = name;
+             DeliveryDates = deliveryDates;
+             Formulation = formulation;
         }
-        
     }
 }

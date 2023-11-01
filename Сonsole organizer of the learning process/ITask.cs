@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace Сonsole_organizer_of_the_learning_process
 {
+    public enum AssignmentStatus
+    {
+        Accepted,
+        NotAccepted
+    }
     public interface ITask
     {// занятие
-        public  string Date { get; set; }
-        public  List<string> topics { get; set; }
-        public string Comment { get; set; }
+        public string Name { get; set; }
+        public string DeliveryDates { get; set; }
+        public string Formulation { get; set; }
+        public string TestLink { get; set; }
+        public string ShortDescription { get; set; }
+        public List<string> Subtasks { get; set; }
     }
 }
