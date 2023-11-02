@@ -35,7 +35,7 @@ namespace Сonsole_organizer_of_the_learning_process
             Console.WriteLine("Занятия:");
             foreach (ILesson lesson in lessons)
             {
-                Console.WriteLine(lesson.Date,lesson.);
+                Console.WriteLine(lesson.Date(),lesson.topics(),lesson.Comment());
             }
         }
 
