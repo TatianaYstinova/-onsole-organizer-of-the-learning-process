@@ -9,17 +9,18 @@ namespace Сonsole_organizer_of_the_learning_process
 {
     public class ProjectAssignment:ATasks
     {
-        public List<string> LinksToAdditionalMaterials { get; set; }
         public override string ShortDescription { get; set; }
         public override List<string> Subtasks { get; set; }
-        public override string TestLink { get => null; set => throw new NotImplementedException(); }
-
-        public ProjectAssignment(string name, string shortDescription, List<string> subtasks, List<string> linksToAdditionalMaterials)
+        public override List<string> LinksToAddMaterials { get; set; }
+        public override string Formulation { get { return null; } set { LinkTestInAThirdPartyResource = null; } }
+        public override List<string> LinkTestInAThirdPartyResource { get { return null; } set { LinkTestInAThirdPartyResource = null; } }
+       
+        public ProjectAssignment(string name, string shortDescription, List<string> subtasks, List<string> linksToAddMaterials, string deliveryDates):base(name, deliveryDates)
         {
-            this.Name = name;
+            
             this.ShortDescription = shortDescription;
+            this.LinksToAddMaterials = linksToAddMaterials;
             this.Subtasks = subtasks;
-            this.LinksToAdditionalMaterials = linksToAdditionalMaterials;
         }
     }
 }
