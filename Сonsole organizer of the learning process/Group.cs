@@ -11,12 +11,7 @@ namespace Сonsole_organizer_of_the_learning_process
         List<IStudent> students { get; set; }
         List<ILesson> lessons { get; set; }
         List<ITask> tasks { get; set; }
-        //public Group(List<ITask> tasks)
-       // {
-          //  this.students = new List<IStudent>();
-           // this.lessons = new List<ILesson>();
-            //this.tasks = new List<ITask>();
-       // }
+        
         public void AddStudent(IStudent student)
         {
             students.Add(student);
@@ -62,7 +57,5 @@ namespace Сonsole_organizer_of_the_learning_process
                 Console.WriteLine(task.ToString());
             }
         }
-
     }
-
 }   
