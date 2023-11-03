@@ -2,34 +2,55 @@
 using System.Threading.Tasks;
 using Сonsole_organizer_of_the_learning_process;
 
-Group group = new Group(); // создаем объект группы
-//добавляем студентов в группу
-group.AddStudent(new Student("Иванов Иван", 1234, "1234"));
-group.AddStudent(new Student("Петров Петр", 56788 ,"677"));
-group.AddLesson(new Lessons("Математика", LessonType.Other ));
-group.AddLesson(new Lessons("Физика"));
-// добавляем задания в группу
-group.AddTask(new Task("Домашнее задание 1", "Математика"));
-group.AddTask(new Task("Домашнее задание 2", "Физика"));
+Group group = new Group();
+Console.WriteLine("1 - Вывести информацию о группе");
+Console.WriteLine("2 - Добавить студента");
+Console.WriteLine("3 - Удалить студента");
+Console.WriteLine("4 - Добавить занятие");
+Console.WriteLine("5 - Удалить занятие");
+Console.WriteLine("6 - Добавить задание");
+Console.WriteLine("7 - Удалить задание");
+Console.WriteLine("0 - Выход");
 
+int option;
+do
+{
+    Console.WriteLine("Введите запрос : ");
+    option = int.Parse(Console.ReadLine());
 
-    Console.WriteLine("Введите запрос (students - студенты, lessons - занятия, tasks - задания):");
-    string query = Console.ReadLine(); // считываем запрос от пользователя
-
-    switch (query)
+    switch (option)
     {
-        case "students":
-            group.PrintStudentsInfo(); // выводим информацию о студентах
+        case 1:
+            group.PrintLessonsInfo();
             break;
-        case "lessons":
-            group.PrintLessonsInfo(); // выводим информацию о занятиях
+        case 2:
+            group.AddStudent();
             break;
-        case "tasks":
-            group.PrintTasksInfo(); // выводим информацию о заданиях
+        case 3:
+            group.RemoveStudent(); 
+            break;
+        case 4:
+            group.AddLesson();
+            break;
+        case 5:
+            group.RemoveLesson();
+            break;
+        case 6:
+            group.AddTask();
+            break;
+        case 7:
+            group.RemoveTask();
+            break;
+         case 0:
+            Console.WriteLine("Выход из программы");
             break;
         default:
-            Console.WriteLine("Некорректный запрос!");
+            Console.WriteLine("Некорректный ввод. Попробуйте еще раз.");
             break;
     }
+} while (option != 0);
+
+
+
 
 
