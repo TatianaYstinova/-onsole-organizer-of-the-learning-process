@@ -17,6 +17,11 @@ namespace Сonsole_organizer_of_the_learning_process
             PhoneNumber = phoneNumber;
             Email = email;
         }
-       
+        public override string ToString()
+        {
+            string ops= FullName + " " + PhoneNumber + " " + Email;
+
+            return ops;
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace Сonsole_organizer_of_the_learning_process
        
         public ProjectAssignment(string name, string shortDescription, List<string> subtasks, List<string> linksToAddMaterials, string deliveryDates):base(name, deliveryDates)
         {
-            
             this.ShortDescription = shortDescription;
             this.LinksToAddMaterials = linksToAddMaterials;
             this.Subtasks = subtasks;

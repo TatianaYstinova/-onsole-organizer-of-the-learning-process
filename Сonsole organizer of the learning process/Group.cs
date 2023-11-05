@@ -11,14 +11,32 @@ namespace Сonsole_organizer_of_the_learning_process
         List<IStudent> students { get; set; }
         List<ILesson> lessons { get; set; }
         List<ITask> tasks { get; set; }
+        public Group() 
+        {
+            students = new List<IStudent>();
+            lessons = new List<ILesson>();
+            tasks = new List<ITask>();
+        }
         
         public void AddStudent(IStudent student)
         {
             students.Add(student);
         }
-        public void RemoveStudent(IStudent student)
+        public void RemoveStudent(string studenToDeleteName)
         {
-            students.Remove(student);
+            for( int i = 0; i < students.Count; i++)
+            {
+                IStudent student = students[i];
+
+                if (studenToDeleteName == student.FullName)
+                {
+                    students.Remove(student);
+                }
+                else
+                {
+                    Console.WriteLine($"Студент с именем '{studenToDeleteName}' не найден.");
+                }
+            }
         }
         public void AddLesson(ILesson lesson)
         {
