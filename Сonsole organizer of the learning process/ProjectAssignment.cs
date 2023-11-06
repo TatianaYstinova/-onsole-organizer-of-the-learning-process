@@ -15,7 +15,7 @@ namespace Сonsole_organizer_of_the_learning_process
         public override string Formulation { get { return null; } set { LinkTestInAThirdPartyResource = null; } }
         public override List<string> LinkTestInAThirdPartyResource { get { return null; } set { LinkTestInAThirdPartyResource = null; } }
        
-        public ProjectAssignment(string name, string shortDescription, List<string> subtasks, List<string> linksToAddMaterials, string deliveryDates):base(name, deliveryDates)
+        public ProjectAssignment(string name, string shortDescription, List<string> subtasks, List<string> linksToAddMaterials, string deadLine):base(name, deadLine)
         {
             this.ShortDescription = shortDescription;
             this.LinksToAddMaterials = linksToAddMaterials;

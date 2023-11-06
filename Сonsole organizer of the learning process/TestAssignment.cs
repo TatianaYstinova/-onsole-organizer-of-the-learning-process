@@ -14,7 +14,7 @@ namespace Сonsole_organizer_of_the_learning_process
         public override string ShortDescription { get { return null; } set { ShortDescription = null; } }
         public override List<string> Subtasks { get { return null; } set { Subtasks = null; } }
 
-        public TestAssignment(string name, string deliveryDates, List<string> linkTestInAThirdPartyResource) : base(name,deliveryDates)
+        public TestAssignment(string name, string deadLine, List<string> linkTestInAThirdPartyResource) : base(name, deadLine)
         {
              this.LinkTestInAThirdPartyResource = linkTestInAThirdPartyResource;
         }
