@@ -60,7 +60,6 @@ do
             Console.WriteLine("2 - Консультация");
             Console.WriteLine("3 - Другое");
             int type = int.Parse(Console.ReadLine());
-
             switch (type)
             {
                 case 1:
@@ -75,10 +74,11 @@ do
             }
             ILesson lesson = new Lessons(data, topics, comment,LessonType.Lecture);
             group.AddLesson(lesson);
-        break;
-        //case 5:
-        //    group.RemoveLesson();
-        //    break;
+              break;
+       // case 5:
+         //   Console.WriteLine("Напишите дату  удаляемого занятия ");
+         //  group.RemoveLesson();
+          // break;
         //case 6:
         //    group.AddTask();
         //    break;
