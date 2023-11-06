@@ -84,8 +84,20 @@ do
           break;
 
         case 6:
-         group.AddTask();
-         break;
+            Console.WriteLine("Напишите тип задания:");
+            Console.WriteLine("1 - Обычное задание");
+            Console.WriteLine("2 - Тестирование");
+            Console.WriteLine("3 - Проект");
+            int task= int.Parse(Console.ReadLine());
+
+            switch (task)
+            {
+                case 1:
+                    group.AddTask(new RegularAssignment());
+                    break;
+            }
+         //group.AddTask();
+         //break;
         //case 7:
         //    group.RemoveTask();
         //    break;
