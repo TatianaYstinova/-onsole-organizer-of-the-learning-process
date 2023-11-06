@@ -10,6 +10,8 @@ Console.WriteLine("4 - Добавить занятие");
 Console.WriteLine("5 - Удалить занятие");
 Console.WriteLine("6 - Добавить задание");
 Console.WriteLine("7 - Удалить задание");
+Console.WriteLine("8 - Добавить подзадание");
+Console.WriteLine("9 - Удалить подзадание");
 Console.WriteLine("0 - Выход");
 
 
@@ -81,9 +83,9 @@ do
          group.RemoveLesson(lessonToDeleteDate);
           break;
 
-        //case 6:
-        //    group.AddTask();
-        //    break;
+        case 6:
+         group.AddTask();
+         break;
         //case 7:
         //    group.RemoveTask();
         //    break;
