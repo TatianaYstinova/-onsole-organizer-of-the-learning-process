@@ -89,11 +89,30 @@ do
             Console.WriteLine("2 - Тестирование");
             Console.WriteLine("3 - Проект");
             int task= int.Parse(Console.ReadLine());
-
+            
+            string deadLine= Console.ReadLine();
             switch (task)
             {
                 case 1:
-                    group.AddTask(new RegularAssignment());
+                     Console.WriteLine("Напишите название:");
+                     string name= Console.ReadLine();
+                    Console.WriteLine("Напишите формулировку:");
+                    string formulation = Console.ReadLine();
+                    Console.WriteLine("Напишите ссылки на доп материалы по одной через enter или 'stop', чтобы перейти дальше:");
+                    string linksToAddMaterial = Console.ReadLine();
+
+                    List<string> linksToAddMaterials = new List<string>();
+
+                    while (linksToAddMaterial != "stop")
+                    {
+                        linksToAddMaterials.Add(linksToAddMaterial);
+                        Console.WriteLine("Напишите список тем занятия по одной через enter или 'stop', чтобы перейти дальше:");
+                        linksToAddMaterial = Console.ReadLine();
+
+                    }
+                    Console.WriteLine("Напишите сроки сдачи:");
+                    string deadLin = Console.ReadLine();
+                    group.AddTask(new RegularAssignment(name,formulation, linksToAddMaterial, deadLin));
                     break;
             }
          //group.AddTask();

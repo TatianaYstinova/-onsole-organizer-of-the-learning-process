@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Сonsole_organizer_of_the_learning_process
 {
@@ -19,6 +20,14 @@ namespace Сonsole_organizer_of_the_learning_process
             this.Formulation = formulation;
             this.LinksToAddMaterials = linksToAddMaterials;
         }
-
+        public override string ToSrting()
+        {
+            string addMaterials = null;
+            foreach (string linksToAddMaterial in LinksToAddMaterials)
+            {
+                addMaterials += linksToAddMaterial;
+            }
+            string ops = Name + " " + Formulation + " " + addMaterials + " " + DeadLine;
+        }
     }
 }
