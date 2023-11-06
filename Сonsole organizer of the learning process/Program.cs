@@ -40,41 +40,40 @@ do
              group.RemoveStudent(studenToDeleteName);
              break;
         case 4:
-            Console.WriteLine("Напишите название занятия :");
-            string nameLessons = Console.ReadLine();
             Console.WriteLine("Напишите дату занятия");
             string data = Console.ReadLine();
-            
             Console.WriteLine("Напишите список тем занятия по одной через enter или 'stop', чтобы перейти дальше:");
-            
-            string topic = null;
-            List<string> topics = new List<string>();
-            
-            while (topic != "stop")
-            {
-                topic = Console.ReadLine();
+            string topic = Console.ReadLine();
+            List <string> topics = new List<string>();
 
-                if(topic != "stop")
-                {
-                    topics.Add(topic);
-                }
-            }
-            
-            
+             while (topic!= "stop")
+             {
+                topics.Add(topic);
+                Console.WriteLine("Напишите список тем занятия по одной через enter или 'stop', чтобы перейти дальше:");
+                topic =Console.ReadLine();
+
+             }
             Console.WriteLine("Напишите комментарий от преподавателя:");
             string comment = Console.ReadLine();
-            
-            Console.WriteLine("Напишите типов занятия :");
-
+            Console.WriteLine("Напишите тип занятия :");
             Console.WriteLine("1 - Лекция");
             Console.WriteLine("2 - Консультация");
             Console.WriteLine("3 - Другое");
-            //int type = Console.ReadLine();
+            int type = int.Parse(Console.ReadLine());
 
-
-
-            ILesson lesson = new Lessons( data, topics, comment, LessonType.Lecture);
-            
+            switch (type)
+            {
+                case 1:
+                    Console.WriteLine(LessonType.Lecture);
+                    break;
+                case 2:
+                    Console.WriteLine(LessonType.Consultation); 
+                    break;
+                case 3:
+                    Console.WriteLine(LessonType.Other);
+                    break;
+            }
+            ILesson lesson = new Lessons(data, topics, comment,LessonType.Lecture);
             group.AddLesson(lesson);
         break;
         //case 5:
