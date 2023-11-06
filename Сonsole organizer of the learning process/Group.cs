@@ -42,9 +42,21 @@ namespace Сonsole_organizer_of_the_learning_process
         {
             lessons.Add(lesson);
         }
-        public void RemoveLesson(ILesson lesson)
+        public void RemoveLesson( string lessonToDeleteDate)
         {
-            lessons.Remove(lesson);
+            for( int i = 0;i < lessons.Count;i++)
+            {
+                ILesson lesson = lessons[i];
+
+                if (lessonToDeleteDate == lesson.Date)
+                {
+                    lessons.Remove(lesson);
+                }
+                else
+                {
+                    Console.WriteLine($"Студент с именем '{lessonToDeleteDate}' не найден.");
+                }
+            }
         }
         public void AddTask(ITask task)
         {

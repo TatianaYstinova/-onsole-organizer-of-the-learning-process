@@ -75,17 +75,19 @@ do
             ILesson lesson = new Lessons(data, topics, comment,LessonType.Lecture);
             group.AddLesson(lesson);
               break;
-       // case 5:
-         //   Console.WriteLine("Напишите дату  удаляемого занятия ");
-         //  group.RemoveLesson();
-          // break;
+        case 5:
+          Console.WriteLine("Напишите дату  удаляемого занятия ");
+            string lessonToDeleteDate = Console.ReadLine();
+         group.RemoveLesson(lessonToDeleteDate);
+          break;
+
         //case 6:
         //    group.AddTask();
         //    break;
         //case 7:
         //    group.RemoveTask();
         //    break;
-         case 0:
+        case 0:
             Console.WriteLine("Выход из программы");
             break;
         default:
