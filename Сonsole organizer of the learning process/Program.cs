@@ -90,7 +90,7 @@ do
             Console.WriteLine("3 - Проект");
             int task= int.Parse(Console.ReadLine());
             
-            string deadLine= Console.ReadLine();
+            
             switch (task)
             {
                 case 1:
@@ -100,6 +100,8 @@ do
                     string formulation = Console.ReadLine();
                     Console.WriteLine("Напишите ссылки на доп материалы по одной через enter или 'stop', чтобы перейти дальше:");
                     string linksToAddMaterial = Console.ReadLine();
+                    Console.WriteLine("Напишите срок сдачи");
+                    string deadLine = Console.ReadLine();
 
                     List<string> linksToAddMaterials = new List<string>();
 
@@ -112,7 +114,7 @@ do
                     }
                     Console.WriteLine("Напишите сроки сдачи:");
                     string deadLin = Console.ReadLine();
-                    group.AddTask(new RegularAssignment(name,formulation, linksToAddMaterial, deadLin));
+                    group.AddTask(new RegularAssignment(name,formulation, linksToAddMaterial, deadLine));
                     break;
             }
          //group.AddTask();
