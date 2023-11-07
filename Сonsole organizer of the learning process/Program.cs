@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 using Сonsole_organizer_of_the_learning_process;
 
 Group group = new Group();
@@ -89,20 +90,17 @@ do
             Console.WriteLine("2 - Тестирование");
             Console.WriteLine("3 - Проект");
             int task= int.Parse(Console.ReadLine());
-            
-            
+
+
             switch (task)
             {
                 case 1:
-                     Console.WriteLine("Напишите название:");
-                     string name= Console.ReadLine();
+                    Console.WriteLine("Напишите название:");
+                    string name = Console.ReadLine();
                     Console.WriteLine("Напишите формулировку:");
                     string formulation = Console.ReadLine();
                     Console.WriteLine("Напишите ссылки на доп материалы по одной через enter или 'stop', чтобы перейти дальше:");
                     string linksToAddMaterial = Console.ReadLine();
-                    Console.WriteLine("Напишите срок сдачи");
-                    string deadLine = Console.ReadLine();
-
                     List<string> linksToAddMaterials = new List<string>();
 
                     while (linksToAddMaterial != "stop")
@@ -112,11 +110,62 @@ do
                         linksToAddMaterial = Console.ReadLine();
 
                     }
-                    Console.WriteLine("Напишите сроки сдачи:");
-                    string deadLin = Console.ReadLine();
-                    group.AddTask(new RegularAssignment(name,formulation, linksToAddMaterial, deadLine));
+                    Console.WriteLine("Напишите срок сдачи");
+                    string deadLine = Console.ReadLine();
+                    group.AddTask(new RegularAssignment(name,deadLine,formulation,linksToAddMaterials));
+                    break;
+                case 2:
+                    Console.WriteLine("Напишите название теста:");
+                    string nameTest= Console.ReadLine();
+                    Console.WriteLine("Напишите ссылки на тестирование в стороннем ресурсе по одной через enter или 'stop', чтобы перейти дальше:");
+                    string testing = Console.ReadLine();
+                    List<string> LinkTestInAThirdPartyResource = new List<string>();
+
+                    while(testing != "stop")
+                    {
+                        LinkTestInAThirdPartyResource.Add(testing);
+                        Console.WriteLine("Напишите ссылки на тестирование в стороннем ресурсе по одной через enter или 'stop', чтобы перейти дальше:");
+                        testing = Console.ReadLine();
+                    }
+                    Console.WriteLine("Напишите срок сдачи");
+                    string dateOfDelivery = Console.ReadLine();
+                    group.AddTask(new TestAssignment(nameTest, dateOfDelivery, LinkTestInAThirdPartyResource));
+                    break;
+                case 3:
+                    Console.WriteLine("Напишите название:");
+                    string nameProject = Console.ReadLine();
+                    Console.WriteLine("Напишите кратное описание:");
+                    string description = Console.ReadLine();
+                    Console.WriteLine("Напишите набор подзадач по одной через enter или 'stop', чтобы перейти дальше:");
+                    string addSubtask = Console.ReadLine();
+
+                    List<string> Subtasks = new List<string>();
+
+                     while ( addSubtask != "stop")
+                    {
+                        Subtasks.Add(addSubtask);
+                        Console.WriteLine("Напишите набор подзадач по одной через enter или 'stop', чтобы перейти дальше:");
+                         addSubtask = Console.ReadLine();
+                    }
+                     Console.WriteLine("Напишите ссылки на доп материалы по одной через enter или 'stop', чтобы перейти дальше:");
+                    string addMaterials = Console.ReadLine();
+
+                    List<string> LinksToAddMaterials = new List<string>();
+
+                    while (addMaterials != "stop")
+                    {
+                        LinksToAddMaterials.Add(addMaterials);
+                        Console.WriteLine("Напишите ссылки на доп материалы по одной через enter или 'stop', чтобы перейти дальше:");
+                        addMaterials= Console.ReadLine();
+                    }
+                    Console.WriteLine("Напишите срок сдачи:");
+                    string deadlineDelivery = Console.ReadLine();
+
+                    group.AddTask(new ProjectAssignment(nameProject, description, Subtasks, LinksToAddMaterials, deadlineDelivery));
                     break;
             }
+                   
+            
          //group.AddTask();
          //break;
         //case 7:

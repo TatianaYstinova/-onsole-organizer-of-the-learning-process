@@ -18,5 +18,17 @@ namespace Сonsole_organizer_of_the_learning_process
         {
              this.LinkTestInAThirdPartyResource = linkTestInAThirdPartyResource;
         }
+        public override string ToString()
+        {
+            string re = null;
+            foreach (string testing  in LinkTestInAThirdPartyResource)
+            {
+                re += testing;
+            }
+
+            string ops = Name +  " " + re + " " + DeadLine;
+
+            return ops;
+        }
     }
 }

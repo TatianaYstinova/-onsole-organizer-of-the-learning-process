@@ -21,5 +21,20 @@ namespace Сonsole_organizer_of_the_learning_process
             this.LinksToAddMaterials = linksToAddMaterials;
             this.Subtasks = subtasks;
         }
+        public override string ToString()
+        {
+            string addMaterials = null;
+            foreach (string linksToAddMaterial in LinksToAddMaterials)
+            {
+                addMaterials += linksToAddMaterial;
+            }
+            string addSubtask = null;
+            foreach(string subtask in Subtasks)
+            {
+                addSubtask += subtask;
+            }
+            string ops = Name + " " + ShortDescription + " " + addSubtask + " " + addMaterials ;
+            return ops;
+        }
     }
 }
