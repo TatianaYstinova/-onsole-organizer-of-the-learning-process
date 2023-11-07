@@ -23,17 +23,24 @@ namespace Сonsole_organizer_of_the_learning_process
         }
         public override string ToString()
         {
+            string ops = Name + " " + ShortDescription;
+
             string addMaterials = null;
             foreach (string linksToAddMaterial in LinksToAddMaterials)
             {
                 addMaterials += linksToAddMaterial;
             }
+
+            ops += addMaterials;
+
             string addSubtask = null;
             foreach(string subtask in Subtasks)
             {
                 addSubtask += subtask;
             }
-            string ops = Name + " " + ShortDescription + " " + addSubtask + " " + addMaterials ;
+
+            ops += addSubtask;
+
             return ops;
         }
     }

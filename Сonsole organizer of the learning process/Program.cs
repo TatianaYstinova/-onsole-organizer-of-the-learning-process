@@ -49,20 +49,23 @@ do
             string topic = Console.ReadLine();
             List <string> topics = new List<string>();
 
-             while (topic!= "stop")
-             {
+            while (topic!= "stop")
+            {
                 topics.Add(topic);
                 Console.WriteLine("Напишите список тем занятия по одной через enter или 'stop', чтобы перейти дальше:");
                 topic =Console.ReadLine();
 
-             }
+            }
             Console.WriteLine("Напишите комментарий от преподавателя:");
             string comment = Console.ReadLine();
+
             Console.WriteLine("Напишите тип занятия :");
             Console.WriteLine("1 - Лекция");
             Console.WriteLine("2 - Консультация");
             Console.WriteLine("3 - Другое");
+
             int type = int.Parse(Console.ReadLine());
+
             switch (type)
             {
                 case 1:
@@ -75,22 +78,24 @@ do
                     Console.WriteLine(LessonType.Other);
                     break;
             }
-            ILesson lesson = new Lessons(data, topics, comment,LessonType.Lecture);
-            group.AddLesson(lesson);
-              break;
-        case 5:
-          Console.WriteLine("Напишите дату  удаляемого занятия ");
-            string lessonToDeleteDate = Console.ReadLine();
-         group.RemoveLesson(lessonToDeleteDate);
-          break;
 
+            ILesson lesson = new Lessons(data, topics, comment,LessonType.Lecture);
+            
+            group.AddLesson(lesson);
+            
+            break;
+        case 5:
+            Console.WriteLine("Напишите дату  удаляемого занятия ");
+            string lessonToDeleteDate = Console.ReadLine();
+            group.RemoveLesson(lessonToDeleteDate);
+            
+            break;
         case 6:
             Console.WriteLine("Напишите тип задания:");
             Console.WriteLine("1 - Обычное задание");
             Console.WriteLine("2 - Тестирование");
             Console.WriteLine("3 - Проект");
             int task= int.Parse(Console.ReadLine());
-
 
             switch (task)
             {
@@ -110,9 +115,11 @@ do
                         linksToAddMaterial = Console.ReadLine();
 
                     }
+
                     Console.WriteLine("Напишите срок сдачи");
                     string deadLine = Console.ReadLine();
-                    group.AddTask(new RegularAssignment(name,deadLine,formulation,linksToAddMaterials));
+                    group.AddTask(new RegularAssignment(name , deadLine , formulation ,linksToAddMaterials));
+                   
                     break;
                 case 2:
                     Console.WriteLine("Напишите название теста:");
@@ -130,6 +137,7 @@ do
                     Console.WriteLine("Напишите срок сдачи");
                     string dateOfDelivery = Console.ReadLine();
                     group.AddTask(new TestAssignment(nameTest, dateOfDelivery, LinkTestInAThirdPartyResource));
+                
                     break;
                 case 3:
                     Console.WriteLine("Напишите название:");
@@ -141,13 +149,14 @@ do
 
                     List<string> Subtasks = new List<string>();
 
-                     while ( addSubtask != "stop")
+                    while ( addSubtask != "stop")
                     {
                         Subtasks.Add(addSubtask);
                         Console.WriteLine("Напишите набор подзадач по одной через enter или 'stop', чтобы перейти дальше:");
-                         addSubtask = Console.ReadLine();
+                        addSubtask = Console.ReadLine();
                     }
-                     Console.WriteLine("Напишите ссылки на доп материалы по одной через enter или 'stop', чтобы перейти дальше:");
+
+                    Console.WriteLine("Напишите ссылки на доп материалы по одной через enter или 'stop', чтобы перейти дальше:");
                     string addMaterials = Console.ReadLine();
 
                     List<string> LinksToAddMaterials = new List<string>();
@@ -158,24 +167,30 @@ do
                         Console.WriteLine("Напишите ссылки на доп материалы по одной через enter или 'stop', чтобы перейти дальше:");
                         addMaterials= Console.ReadLine();
                     }
+
                     Console.WriteLine("Напишите срок сдачи:");
                     string deadlineDelivery = Console.ReadLine();
-
-                    group.AddTask(new ProjectAssignment(nameProject, description, Subtasks, LinksToAddMaterials, deadlineDelivery));
+                    group.AddTask(new ProjectAssignment(nameProject, description , Subtasks, LinksToAddMaterials , deadlineDelivery));
+                  
+                    break;
+                default:
+                    Console.WriteLine("Некорректный ввод. Попробуйте еще раз.");
+                    
                     break;
             }
-                   
-            
-         //group.AddTask();
-         //break;
+
+            break;
         //case 7:
         //    group.RemoveTask();
+
         //    break;
         case 0:
             Console.WriteLine("Выход из программы");
+
             break;
         default:
             Console.WriteLine("Некорректный ввод. Попробуйте еще раз.");
+
             break;
     }
 } while (option != 0);
