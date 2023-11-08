@@ -205,6 +205,7 @@ do
             {
                 Console.WriteLine(sub);
             }
+            group.
 
             break;
         //case 9:
