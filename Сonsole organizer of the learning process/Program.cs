@@ -183,10 +183,30 @@ do
         case 7:
             Console.WriteLine("Напишите название удаляемого занятия");
             string taskToDeleteName = Console.ReadLine();
-          group.RemoveTask(taskToDeleteName);
-           break;
+            group.RemoveTask(taskToDeleteName);
 
-        
+           break;
+        case 8:
+            List<String> subtasks = new List<string>();
+            while (true)
+            {
+                Console.WriteLine("Введите подзадачу (или 'exit' для выхода): ");
+                string sub = Console.ReadLine();
+
+                if(sub.ToLower() == "exit")
+                {
+                    break;
+                }
+                subtasks.Add(sub);
+                Console.WriteLine("Подзадача добавлена.");
+            }
+            Console.WriteLine("Список подзадач:");
+            foreach(string sub in subtasks)
+            {
+                Console.WriteLine(sub);
+            }
+
+            break;
         case 0:
             Console.WriteLine("Выход из программы");
 

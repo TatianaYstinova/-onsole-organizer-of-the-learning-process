@@ -21,5 +21,6 @@ namespace Сonsole_organizer_of_the_learning_process
             Name = name;
             DeadLine = deadLine;
         }
+      
     }
 }

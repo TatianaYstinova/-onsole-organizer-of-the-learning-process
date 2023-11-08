@@ -21,6 +21,7 @@ namespace Сonsole_organizer_of_the_learning_process
             this.LinksToAddMaterials = linksToAddMaterials;
             this.Subtasks = subtasks;
         }
+
         public override string ToString()
         {
             string ops = Name + " " + ShortDescription;
