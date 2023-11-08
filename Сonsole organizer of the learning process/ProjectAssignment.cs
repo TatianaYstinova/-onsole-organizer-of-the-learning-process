@@ -7,15 +7,15 @@ using System.Xml.Linq;
 
 namespace Сonsole_organizer_of_the_learning_process
 {
-    public class ProjectAssignment:ATasks
+    public class ProjectAssignment : ATasks
     {
         public override string ShortDescription { get; set; }
         public override List<string> Subtasks { get; set; }
         public override List<string> LinksToAddMaterials { get; set; }
         public override string Formulation { get { return null; } set { LinkTestInAThirdPartyResource = null; } }
         public override List<string> LinkTestInAThirdPartyResource { get { return null; } set { LinkTestInAThirdPartyResource = null; } }
-       
-        public ProjectAssignment(string name, string shortDescription, List<string> subtasks, List<string> linksToAddMaterials, string deadLine):base(name, deadLine)
+
+        public ProjectAssignment(string name, string shortDescription, List<string> subtasks, List<string> linksToAddMaterials, string deadLine) : base(name, deadLine)
         {
             this.ShortDescription = shortDescription;
             this.LinksToAddMaterials = linksToAddMaterials;
@@ -35,7 +35,7 @@ namespace Сonsole_organizer_of_the_learning_process
             ops += addMaterials;
 
             string addSubtask = null;
-            foreach(string subtask in Subtasks)
+            foreach (string subtask in Subtasks)
             {
                 addSubtask += subtask;
             }
@@ -44,5 +44,9 @@ namespace Сonsole_organizer_of_the_learning_process
 
             return ops;
         }
+        //public  string AddSubtask(string subtask)
+        //{
+        //    foreach
+            
     }
 }

@@ -8,10 +8,10 @@ namespace Сonsole_organizer_of_the_learning_process
 {
     public class Group
     {
-        List<IStudent> students { get; set; }
-        List<ILesson> lessons { get; set; }
-        List<ITask> tasks { get; set; }
-        public Group() 
+       public List<IStudent> students { get; set; }
+       public List<ILesson> lessons { get; set; }
+       public  List<ITask> tasks { get; set; }
+       public Group() 
         {
             students = new List<IStudent>();
             lessons = new List<ILesson>();
@@ -64,11 +64,11 @@ namespace Сonsole_organizer_of_the_learning_process
         }
         public void RemoveTask(string taskToDeleteName)
         {
-            for ( int i = 0; i < tasks.Count; i++)
+            for (int i = 0; i < tasks.Count; i++)
             {
                 ITask task = tasks[i];
 
-                if(taskToDeleteName == task.Name)
+                if (taskToDeleteName == task.Name)
                 {
                     tasks.Remove(task);
                 }
@@ -78,6 +78,19 @@ namespace Сonsole_organizer_of_the_learning_process
                 }
             }
         }
+        public void AddSubtask(string taskName,string sub )
+        {
+           for( int i = 0; i< tasks.Count; i++)
+            {
+                ITask task = tasks[i];
+                if(taskName == task.Name)
+                {
+                  task.Subtasks.Add(sub);
+                }
+            }
+        }
+     
+
         
         // вывод информации 
         public void PrintLessonsInfo()
@@ -101,4 +114,5 @@ namespace Сonsole_organizer_of_the_learning_process
             }
         }
     }
+    
 }   

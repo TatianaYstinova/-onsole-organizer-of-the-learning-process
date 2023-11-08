@@ -187,27 +187,28 @@ do
 
            break;
         case 8:
-            List<String> subtasks = new List<string>();
             while (true)
             {
                 Console.WriteLine("Введите подзадачу (или 'exit' для выхода): ");
-                string sub = Console.ReadLine();
+                string subtask = Console.ReadLine();
+                Console.WriteLine("Введите имя  задания для которого собираемся добавлять позадачу ");
+                string taskName = Console.ReadLine();
 
-                if(sub.ToLower() == "exit")
+                if (subtask.ToLower() == "exit")
                 {
                     break;
                 }
-                subtasks.Add(sub);
+                
                 Console.WriteLine("Подзадача добавлена.");
+            group.AddSubtask(taskName, subtask);
             }
-            Console.WriteLine("Список подзадач:");
-            foreach(string sub in subtasks)
-            {
-                Console.WriteLine(sub);
-            }
-            group.
-
             break;
+
+
+
+
+
+
         //case 9:
         //    Console.WriteLine("Напишите подзадачу для удаления");
         //    string
