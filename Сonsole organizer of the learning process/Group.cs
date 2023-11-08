@@ -78,10 +78,7 @@ namespace Сonsole_organizer_of_the_learning_process
                 }
             }
         }
-        public void AddSubtask(ITask subtask)
-        {
-          
-        }
+        
         // вывод информации 
         public void PrintLessonsInfo()
         {

@@ -207,7 +207,19 @@ do
             }
 
             break;
+        //case 9:
+        //    Console.WriteLine("Напишите подзадачу для удаления");
+        //    string
+
+
+
+
+
+
+
+
         case 0:
+
             Console.WriteLine("Выход из программы");
 
             break;
