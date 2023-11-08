@@ -180,10 +180,13 @@ do
             }
 
             break;
-        //case 7:
-        //    group.RemoveTask();
+        case 7:
+            Console.WriteLine("Напишите название удаляемого занятия");
+            string taskToDeleteName = Console.ReadLine();
+          group.RemoveTask(taskToDeleteName);
+           break;
 
-        //    break;
+        
         case 0:
             Console.WriteLine("Выход из программы");
 

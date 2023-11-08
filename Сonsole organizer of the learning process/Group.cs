@@ -62,9 +62,21 @@ namespace Сonsole_organizer_of_the_learning_process
         {
             tasks.Add(task);
         }
-        public void RemoveTask(ITask task)
+        public void RemoveTask(string taskToDeleteName)
         {
-            tasks.Remove(task);
+            for ( int i = 0; i < tasks.Count; i++)
+            {
+                ITask task = tasks[i];
+
+                if(taskToDeleteName == task.Name)
+                {
+                    tasks.Remove(task);
+                }
+                else
+                {
+                    Console.WriteLine($"Занятие  с указанной датой '{taskToDeleteName}' не найдено.");
+                }
+            }
         }
         // вывод информации 
         public void PrintLessonsInfo()
