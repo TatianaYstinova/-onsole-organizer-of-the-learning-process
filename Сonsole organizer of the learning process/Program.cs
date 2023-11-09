@@ -189,10 +189,10 @@ do
         case 8:
             while (true)
             {
-                Console.WriteLine("Введите подзадачу (или 'exit' для выхода): ");
-                string subtask = Console.ReadLine();
-                Console.WriteLine("Введите имя  задания для которого собираемся добавлять позадачу ");
-                string taskName = Console.ReadLine();
+               Console.WriteLine("Введите подзадачу (или 'exit' для выхода): ");
+               string subtask = Console.ReadLine();
+               Console.WriteLine("Введите имя  задания для которого собираемся добавлять позадачу: ");
+               string taskName = Console.ReadLine();
 
                 if (subtask.ToLower() == "exit")
                 {
@@ -203,22 +203,23 @@ do
             group.AddSubtask(taskName, subtask);
             }
             break;
+        case 9:
+            while (true)
+            {
+               Console.WriteLine("Напишите подзадачу для удаления");
+               string subtask = Console.ReadLine() ;
+               Console.WriteLine("Напишите имя задания для которого собираетесь удалить подзадачу: ");
+               string taskName = Console.ReadLine();
 
+                 if(subtask.ToLower() == "exit")
+                 {
+                break;
+                  }
 
-
-
-
-
-        //case 9:
-        //    Console.WriteLine("Напишите подзадачу для удаления");
-        //    string
-
-
-
-
-
-
-
+              Console.WriteLine("Подзадача удалена");
+               group.RemoveSubtask(taskName, subtask);
+            }
+            break;
 
         case 0:
 

@@ -89,9 +89,17 @@ namespace Сonsole_organizer_of_the_learning_process
                 }
             }
         }
-     
-
-        
+        public void RemoveSubtask(string taskName,string sub)
+        {
+            for( int i =0; i< tasks.Count; i++)
+            {
+                ITask task = tasks[i];
+                if( taskName == task.Name)
+                {
+                    task.Subtasks.Remove(sub);
+                }
+            }
+        }
         // вывод информации 
         public void PrintLessonsInfo()
         {
