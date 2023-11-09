@@ -65,21 +65,22 @@ do
             Console.WriteLine("3 - Другое");
 
             int type = int.Parse(Console.ReadLine());
+            LessonType typeOne = LessonType.Lecture;
 
             switch (type)
             {
                 case 1:
-                    Console.WriteLine(LessonType.Lecture);
+                    typeOne = LessonType.Lecture;
                     break;
                 case 2:
-                    Console.WriteLine(LessonType.Consultation); 
+                    typeOne = LessonType.Consultation;
                     break;
                 case 3:
-                    Console.WriteLine(LessonType.Other);
+                    typeOne = LessonType.Other;
                     break;
             }
 
-            ILesson lesson = new Lessons(data, topics, comment,LessonType.Lecture);
+            ILesson lesson = new Lessons(data, topics, comment, typeOne);
             
             group.AddLesson(lesson);
             
@@ -228,7 +229,9 @@ do
     }
 } while (option != 0);
 
+// Добавляем возможность отмечать принятые задания студентами
+Console.WriteLine("Введите ФИО студента:");
+int studentIndex = int.Parse(Console.ReadLine());
 
-
-
-
+Console.WriteLine("Введите номер задания:");
+int assignmentIndex = int.Parse(Console.ReadLine());

@@ -7,11 +7,6 @@ using System.Threading.Tasks;
 
 namespace Сonsole_organizer_of_the_learning_process
 {
-    public enum AssignmentStatus
-    {
-        Accepted,
-        NotAccepted
-    }
     public interface ITask
     {// занятие
         public string Name { get; set; }
