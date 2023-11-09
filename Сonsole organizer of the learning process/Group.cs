@@ -100,6 +100,18 @@ namespace Сonsole_organizer_of_the_learning_process
                 }
             }
         }
+        public void AssignATask(string studentName,string task,string status)
+        {
+            for( int i = 0 ; i< students.Count ; i++) 
+            {
+                IStudent student = students[i];
+                if(studentName == student.FullName)
+                {
+                    student.acceptedTask.Add(task,status);
+                }
+            }
+        }
+
         // вывод информации 
         public void PrintLessonsInfo()
         {

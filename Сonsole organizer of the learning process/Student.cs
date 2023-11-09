@@ -11,8 +11,8 @@ namespace Сonsole_organizer_of_the_learning_process
         public string FullName { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
+        public Dictionary<string,string > acceptedTask { get; set; }
 
-        
         public Student(string fullName, int phoneNumber, string email)
         {
             FullName = fullName;
@@ -25,26 +25,7 @@ namespace Сonsole_organizer_of_the_learning_process
 
             return ops;
         }
-        public void SetAssignmentStatus(int assignment, bool status)
-        {
-            assignmentStatus[assignment] = status;
-        }
-
-       // метод присваения статуса
-        public string GetAssignmentStatus(int assignment)
-        {
-            bool status;
-            if (assignmentStatus.TryGetValue(assignment, out status))
-            {
-                return status ? "Принято" : "Не принято";
-            }
-            else
-            {
-                return "Статус отсутствует";
-            }
-        }
-
-
+       
     }
 
 }

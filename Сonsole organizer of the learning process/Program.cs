@@ -13,6 +13,7 @@ Console.WriteLine("6 - Добавить задание");
 Console.WriteLine("7 - Удалить задание");
 Console.WriteLine("8 - Добавить подзадание");
 Console.WriteLine("9 - Удалить подзадание");
+Console.WriteLine("10 - Отметить какие задания студентом были приняты");
 Console.WriteLine("0 - Выход");
 
 
@@ -216,6 +217,19 @@ do
                group.RemoveSubtask(taskNameRemove, subtaskRemove);
             
             break;
+        case 10:
+            Console.WriteLine("Напишите имя студента:");
+            string studentName = Console.ReadLine();
+            Console.WriteLine("Напишите задание:");
+            string taskName = Console.ReadLine();
+            Console.WriteLine("Напишите статус задания:");
+            string status = Console.ReadLine();
+            group.AssignATask(studentName, taskName, status);
+
+            break;
+
+
+
 
         case 0:
 
@@ -229,9 +243,3 @@ do
     }
 } while (option != 0);
 
-// Добавляем возможность отмечать принятые задания студентами
-Console.WriteLine("Введите ФИО студента:");
-int studentIndex = int.Parse(Console.ReadLine());
-
-Console.WriteLine("Введите номер задания:");
-int assignmentIndex = int.Parse(Console.ReadLine());
