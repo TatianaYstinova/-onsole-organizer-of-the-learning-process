@@ -235,9 +235,9 @@ do
 
             Dictionary<string,string> statusesByStudent = group.GetTaskStatus(t);
 
-            foreach( IStudent student1 in group.students)
+            foreach( IStudent studentOne in group.students)
             {
-                Console.WriteLine($"{student1.FullName}  {statusesByStudent[student1.FullName]}");
+                Console.WriteLine($"{studentOne.FullName}  {statusesByStudent[studentOne.FullName]}");
             }
 
             break; 
