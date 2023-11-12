@@ -16,6 +16,7 @@ namespace Сonsole_organizer_of_the_learning_process
         public abstract List<string> LinkTestInAThirdPartyResource { get; set; }
         public abstract string ShortDescription { get; set; }
         public abstract List<string> Subtasks { get; set; }
+        
 
         public ATasks(string name, string deadLine)
         {

@@ -111,6 +111,16 @@ namespace Сonsole_organizer_of_the_learning_process
                 }
             }
         }
+        public Dictionary<string, string> GetTaskStatus(string taskName) 
+        {
+            Dictionary<string, string> statusesByStudent = new Dictionary<string, string>();
+            foreach( IStudent student in students) 
+            {
+                string status= student.acceptedTask[taskName];
+                statusesByStudent.Add(student.FullName,status);
+            }
+            return statusesByStudent;
+        }
 
         // вывод информации 
         public void PrintLessonsInfo()

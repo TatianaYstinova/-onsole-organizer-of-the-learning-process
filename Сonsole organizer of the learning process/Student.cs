@@ -12,7 +12,7 @@ namespace Сonsole_organizer_of_the_learning_process
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public Dictionary<string,string > acceptedTask { get; set; }
-
+       
         public Student(string fullName, int phoneNumber, string email)
         {
             FullName = fullName;
@@ -25,7 +25,7 @@ namespace Сonsole_organizer_of_the_learning_process
 
             return ops;
         }
-       
+
     }
 
 }
