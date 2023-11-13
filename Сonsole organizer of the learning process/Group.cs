@@ -129,18 +129,18 @@ namespace Сonsole_organizer_of_the_learning_process
             foreach (IStudent student in students)
             {
                 if (studentName == student.FullName)
-
-                { foreach (ITask task in tasks)
+                {
+                    foreach (ITask task in tasks)
                     {
                         statusesByTasks = student.acceptedTask;
                     }
-
-                 }
+                }
                 else
                 {
                     Console.WriteLine($"Студента с именем {studentName} нет в группе");
                 }
             }
+
             return statusesByTasks;
         }
         // вывод информации 

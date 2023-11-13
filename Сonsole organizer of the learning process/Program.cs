@@ -15,7 +15,7 @@ Console.WriteLine("8 - Добавить подзадание");
 Console.WriteLine("9 - Удалить подзадание");
 Console.WriteLine("10 - Отметить какие задания студентом были приняты");
 Console.WriteLine("11 - Получить список статусов конкретного задания у всех студентов группы");
-Console.WriteLine("12");
+Console.WriteLine("12- Получить список статусов конкретного студента по всем заданиям группы");
 Console.WriteLine("0 - Выход");
 
 
@@ -244,7 +244,17 @@ do
             }
 
             break;
-            
+            case 12:
+            Console.WriteLine("Напишите имя студента:");
+            string nameStudent = Console.ReadLine();
+
+            Dictionary<string, string> statusesByTasks = group.GetStudentStatus(nameStudent);
+
+            foreach( ITask taskOne in group.tasks)
+            {
+                Console.WriteLine($"{taskOne.Name}  {statusesByTasks[taskOne.Name]}");  
+            }
+            break;
         case 0:
 
             Console.WriteLine("Выход из программы");
