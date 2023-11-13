@@ -121,7 +121,28 @@ namespace Сonsole_organizer_of_the_learning_process
             }
             return statusesByStudent;
         }
+        public Dictionary<string, string> GetStudentStatus(string studentName)
+        {
+            Dictionary<string, string> statusesByTasks = new Dictionary<string, string>();
 
+            //находим студента с указанным именем
+            foreach (IStudent student in students)
+            {
+                if (studentName == student.FullName)
+
+                { foreach (ITask task in tasks)
+                    {
+                        statusesByTasks = student.acceptedTask;
+                    }
+
+                 }
+                else
+                {
+                    Console.WriteLine($"Студента с именем {studentName} нет в группе");
+                }
+            }
+            return statusesByTasks;
+        }
         // вывод информации 
         public void PrintLessonsInfo()
         {

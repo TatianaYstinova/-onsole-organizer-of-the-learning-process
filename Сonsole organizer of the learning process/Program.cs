@@ -15,6 +15,7 @@ Console.WriteLine("8 - Добавить подзадание");
 Console.WriteLine("9 - Удалить подзадание");
 Console.WriteLine("10 - Отметить какие задания студентом были приняты");
 Console.WriteLine("11 - Получить список статусов конкретного задания у всех студентов группы");
+Console.WriteLine("12");
 Console.WriteLine("0 - Выход");
 
 
@@ -139,7 +140,9 @@ do
                     }
                     Console.WriteLine("Напишите срок сдачи");
                     string dateOfDelivery = Console.ReadLine();
-                    group.AddTask(new TestAssignment(nameTest, dateOfDelivery, LinkTestInAThirdPartyResource));
+
+                    ITask taskToAdd = new TestAssignment(nameTest, dateOfDelivery, LinkTestInAThirdPartyResource);
+                    group.AddTask(taskToAdd);
                 
                     break;
                 case 3:
@@ -240,7 +243,8 @@ do
                 Console.WriteLine($"{studentOne.FullName}  {statusesByStudent[studentOne.FullName]}");
             }
 
-            break; 
+            break;
+            
         case 0:
 
             Console.WriteLine("Выход из программы");
